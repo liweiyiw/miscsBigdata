@@ -2,9 +2,9 @@ Hive hm
 
 
 
-# Question1
+## Question1
 
-![image-20210805103300669](hive_question_1.jpg)
+![question1](hive_question_1.jpg)
 
 ```
 INFO  : Compiling command(queryId=hive_20210805103111_778d7d32-ab0b-4b98-a9ae-45daa7e479ce): SELECT u.age, avg(r.rate)
@@ -76,7 +76,7 @@ INFO  : OK
 
 
 
-![image-20210805102453011](hive_question_2.jpg)
+![question2](hive_question_2.jpg)
 
 
 
@@ -214,6 +214,14 @@ INFO  : 2021-08-05 10:14:28,250 Stage-4 map = 100%,  reduce = 0%, Cumulative CPU
 
 ## Question3
 
+![question3](hive_question_3.jpg)
+
+
+
+![question3](hive_question_3.0.jpg)
+
+![question3](hive_question_3.1.jpg)
+
 
 
 ```
@@ -222,24 +230,21 @@ group by  u.userid order by cnt desc
 limit 1
 )
 ,
-rates_top10_by_a_userX  as (
-select r.movieid,avg(r.rate) as avg_rate  from t_rating  r
+rates_by_userX  as (
+select r.movieid,r.rate ,rank()over (order by r.rate desc) as rank_ from t_rating  r
 inner join most_rate_times_userX rt on r.userid=rt.userid
- group by r.movieid
- order by avg_rate desc 
- limit 10 
- 
  )
+
  
- , avg_rates as (
- select  r.movieid, avg(r.rate) avg_rate from t_rating r  inner join rates_top10_by_a_userX x  on r.movieid =x.movieid
+ , avg_rates_by_all as (
+ select  r.movieid, avg(r.rate) avg_rate from t_rating r  inner join rates_by_userX x  on r.movieid =x.movieid
+ and x.rank_<=10
  
  group by r.movieid
  )
  
- select m.moviename ,r.avg_rate  from avg_rates r inner join  
+ select m.moviename ,r.avg_rate  from avg_rates_by_all r inner join  
  t_movie m on r.movieid= m.movieid
- 
  
 ```
 
