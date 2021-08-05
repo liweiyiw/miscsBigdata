@@ -218,9 +218,9 @@ INFO  : 2021-08-05 10:14:28,250 Stage-4 map = 100%,  reduce = 0%, Cumulative CPU
 
 
 
-![question3](hive_question_3.0.jpg)
+![question3](hive_question_3.0.JPG)
 
-![question3](hive_question_3.1.jpg)
+![question3](hive_question_3.1.JPG)
 
 
 
