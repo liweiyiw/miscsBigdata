@@ -4,7 +4,7 @@ Hive hm
 
 # Question1
 
-![image-20210805103300669](C:\Document\Hadoop Spark\geek\homework Aug1\hive_question_1.jpg)
+![image-20210805103300669](hive_question_1.jpg)
 
 ```
 INFO  : Compiling command(queryId=hive_20210805103111_778d7d32-ab0b-4b98-a9ae-45daa7e479ce): SELECT u.age, avg(r.rate)
@@ -76,7 +76,7 @@ INFO  : OK
 
 
 
-![image-20210805102453011](C:\Document\Hadoop Spark\geek\homework Aug1\hive_question_2.jpg)
+![image-20210805102453011](hive_question_2.jpg)
 
 
 
