@@ -26,8 +26,8 @@ case object InversedIndex {
       }.map(wordDoc => ((wordDoc._1, wordDoc._2), 1))
 
       .reduceByKey(_ + _)
+      .sortBy(_._2,false)
       .map(wd=> wd._1._1.toString()+":" + "{"+  (wd._1._2,wd._2) +   "}" ) //
-
     wordDocPair.collect().foreach(println)
 
     spark.stop()
