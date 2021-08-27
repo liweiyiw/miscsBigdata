@@ -1,0 +1,15 @@
+#Put the file to /opt/ode/spark/config.props
+
+#####
+# Database Connection
+#####
+odeDbUrl=<<REPLACE ME>>
+odeDB-host=<<REPLACE ME>>
+odeDB-port=<<REPLACE ME>>
+odeDB-name=<<REPLACE ME>>
+odeDB-user=<<REPLACE ME>>
+odeDB-password=<<REPLACE ME>>
+#odeDB-sslTrustStorePassword=<<REPLACE ME>>
+#odeDB-sslTrustStoreLocation=<<REPLACE ME>>
+#odeDB-enableSSL=<<REPLACE ME>>
+

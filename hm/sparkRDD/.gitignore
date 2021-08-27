@@ -1,0 +1,12 @@
+.idea
+*.iml
+target/
+.settings
+.project
+.classpath
+log/
+tmp/
+META-INF/
+*.log.*
+*.versionsBackup
+src/main/resources/config.props
